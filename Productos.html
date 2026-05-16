@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Catálogo de Sillas de Bambú</title>
+  <style>
+    :root {
+            --verde-bambu: #2c5e3b;
+            --crema-fondo: blanchedalmond;
+            --verde-hover: #1e4228;
+        }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 20px;
+    }
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("Bambu-2.gif") no-repeat center center/cover;
+        opacity: 0.7; /* Ajusta la opacidad aquí */
+        z-index: -1;
+    }
+    .navbar {
+            background-color: var(--verde-bambu);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .navbar-logo {
+            color: var(--crema-fondo);
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .nav-botones {
+            display: flex;
+            gap: 15px;
+        }
+      .btn-nav {
+            background-color: transparent;
+            color: var(--crema-fondo);
+            border: 2px solid var(--crema-fondo);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-nav:hover {
+            background-color: var(--crema-fondo);
+            color: var(--verde-bambu);
+        }
+
+    h1 {
+            color: #f8e328; 
+            margin-bottom: 30px;
+            font-weight: 800;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 3px 3px 0px rgba(44, 94, 59, 0.2);
+            transform: scale(1.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+    .producto {
+      background: #fff;
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: flex-start;
+    }
+    .producto img {
+      max-width: 200px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 20px;
+    }
+    .info {
+      flex: 1;
+    }
+    .precio {
+      font-weight: bold;
+      color: green;
+      font-size: 1.2em;
+    }
+    .detalle {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .detalle img {
+      max-width: 100%;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+    .botones {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .botones button {
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      background-color: #2e7d32;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .botones button:hover {
+      background-color: #1b5e20;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+        <h2 class="navbar-logo">BambuSteel</h2>
+        <div class="nav-botones">
+            <button class="btn-nav">Buscar</button>
+            <button class="btn-nav">Configuración</button>
+            <button class="btn-nav">Usuario</button>
+        </div>
+    </nav>
+
+  <h1>Catálogo de Sillas de Bambú</h1>
+
+  <!-- Producto 1 -->
+  <div class="producto">
+    <a href="Detalles.html">
+      <img src="Silla_Bambu1.jpg" alt="Silla de Bambú Modelo 1">
+    </a>
+    <div class="info">
+      <p class="precio">$1,200 MXN</p>
+      <p><strong>Origen:</strong> Hecha a mano en Chiapas</p>
+      <p><strong>Material:</strong> Bambú natural tratado</p>
+      <p><strong>Medidas:</strong> 90cm alto x 45cm ancho</p>
+      <p><strong>Contribución al medio ambiente:</strong> Material renovable y biodegradable</p>
+    </div>
+  </div>
+
+  <!-- Producto 2 -->
+  <div class="producto">
+    <a href="detalle_silla2.html">
+      <img src="Silla_Bambu2.jpg" alt="Silla de Bambú Modelo 2">
+    </a>
+    <div class="info">
+      <p class="precio">$1,500 MXN</p>
+      <p><strong>Origen:</strong> Artesanos de Oaxaca</p>
+      <p><strong>Material:</strong> Bambú reforzado con fibras naturales</p>
+      <p><strong>Medidas:</strong> 95cm alto x 50cm ancho</p>
+      <p><strong>Contribución al medio ambiente:</strong> Bajo impacto de carbono en su producción</p>
+    </div>
+  </div>
+
+  <!-- Producto 3 -->
+  <div class="producto">
+    <a href="detalle_silla3.html">
+      <img src="Silla_Bambu3.jpg" alt="Silla de Bambú Modelo 3">
+    </a>
+    <div class="info">
+      <p class="precio">$1,350 MXN</p>
+      <p><strong>Origen:</strong> Talleres en Veracruz</p>
+      <p><strong>Material:</strong> Bambú con acabado ecológico</p>
+      <p><strong>Medidas:</strong> 88cm alto x 46cm ancho</p>
+      <p><strong>Contribución al medio ambiente:</strong> Uso de barnices naturales y reciclables</p>
+    </div>
+  </div>
+</body>
+</html>

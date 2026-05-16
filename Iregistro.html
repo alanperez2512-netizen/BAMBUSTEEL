@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - BambuSteel</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: blanchedalmond;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .register-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(44, 94, 59, 0.15);
+            width: 100%;
+            max-width: 450px;
+            border: 2px solid #2c5e3b;
+        }
+        h2 { color: #2c5e3b; text-align: center; margin-bottom: 20px; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .full-width { grid-column: span 2; }
+        label { display: block; margin-bottom: 5px; color: #2c5e3b; font-weight: bold; font-size: 0.9em; }
+        input, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; outline-color: #2c5e3b; }
+        .radio-group { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 10px; }
+        .radio-group label { display: flex; align-items: center; margin-bottom: 0; font-weight: normal; gap: 8px; cursor: pointer; color: #333; }
+        .radio-group input[type="radio"] { width: auto; cursor: pointer; accent-color: #2c5e3b; }
+        .btn-container { margin-top: 25px; display: flex; flex-direction: column; gap: 10px; }
+        .btn { padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; text-align: center; text-decoration: none; transition: 0.3s; }
+        .btn-submit { background-color: #2c5e3b; color: blanchedalmond; font-size: 1em; }
+        .btn-submit:hover { background-color: #1e4228; }
+        .btn-back { background-color: transparent; color: #2c5e3b; border: 1px solid #2c5e3b; font-size: 0.85em; }
+        .btn-back:hover { background-color: #f0f0f0; }
+        .error-input { border-color: #a52a2a !important; background-color: #fff6f6; }
+        .password-match { font-size: 0.85em; margin-top: 5px; font-weight: bold; }
+        .match-error { color: #a52a2a; }
+        .match-success { color: #2c5e3b; }
+    </style>
+</head>
+<body>
+    <div class="register-card">
+        <h2>Únete a BambuSteel</h2>
+        <form id="registroForm">
+            <div class="form-grid">
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                <div>
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" required>
+                </div>
+                <div class="full-width">
+                    <label>Género:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="genero" value="masculino"> Masculino</label>
+                        <label><input type="radio" name="genero" value="femenino"> Femenino</label>
+                        <label><input type="radio" name="genero" value="otro"> Otro</label>
+                    </div>
+                </div>
+                <div class="full-width">
+                    <label for="pais">País:</label>
+                    <select id="pais" required>
+                        <option value="" disabled selected>Selecciona tu país</option>
+                        <option value="mx">México</option>
+                        <option value="co">Colombia</option>
+                        <option value="ar">Argentina</option>
+                        <option value="pe">Perú</option>
+                        <option value="cl">Chile</option>
+                    </select>
+                </div>
+                <div class="full-width">
+                    <label for="tipoUso">Tipo de compra:</label>
+                    <select id="tipoUso" required>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="personal">Uso personal</option>
+                        <option value="institucion">Institución Académica</option>
+                    </select>
+                </div>
+                <div class="full-width">
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" required>
+                </div>
+                <div class="full-width">
+                    <label id="labelTel" for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono">
+                </div>
+                <div>
+                    <label for="pass">Contraseña:</label>
+                    <input type="password" id="pass" pattern="^(?=.*[A-Z]).{8,}$" title="Mínimo 8 caracteres y al menos una mayúscula" required>
+                </div>
+                <div>
+                    <label for="confirmPass">Repetir contraseña:</label>
+                    <input type="password" id="confirmPass" required>
+                    <div id="matchMessage" class="password-match"></div>
+                </div>
+            </div>
+            <div class="btn-container">
+                <button type="submit" class="btn btn-submit">Finalizar Registro</button>
+                <a href="Isesion.html" class="btn btn-back">Volver al inicio de sesión</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const tipoUso = document.getElementById('tipoUso');
+        const pass = document.getElementById('pass');
+        const confirmPass = document.getElementById('confirmPass');
+        const matchMessage = document.getElementById('matchMessage');
+        const telefono = document.getElementById('telefono');
+        const labelTel = document.getElementById('labelTel');
+        const form = document.getElementById('registroForm');
+
+        tipoUso.addEventListener('change', () => {
+            if (tipoUso.value === 'institucion') {
+                telefono.required = true;
+                labelTel.textContent = 'Teléfono (Obligatorio):';
+            } else {
+                telefono.required = false;
+                labelTel.textContent = 'Teléfono (Opcional):';
+            }
+        });
+
+        function verificarCoincidencia() {
+            if (confirmPass.value !== '') {
+                if (pass.value === confirmPass.value) {
+                    matchMessage.textContent = '✓ Las contraseñas coinciden';
+                    matchMessage.className = 'password-match match-success';
+                } else {
+                    matchMessage.textContent = '✗ Las contraseñas no coinciden';
+                    matchMessage.className = 'password-match match-error';
+                }
+            } else {
+                matchMessage.textContent = '';
+            }
+        }
+        confirmPass.addEventListener('input', verificarCoincidencia);
+        pass.addEventListener('input', verificarCoincidencia);
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (pass.value !== confirmPass.value) {
+                alert('¡Error! Las contraseñas no coinciden.');
+                pass.classList.add('error-input');
+                confirmPass.classList.add('error-input');
+                return;
+            }
+
+            const datosRegistro = {
+                nombre: document.getElementById('nombre').value,
+                apellido: document.getElementById('apellido').value,
+                genero: document.querySelector('input[name="genero"]:checked')?.value || 'No especificado',
+                pais: document.getElementById('pais').value,
+                tipoUso: tipoUso.value,
+                correo: document.getElementById('correo').value,
+                telefono: telefono.value,
+                pass: pass.value
+            };
+
+            try {
+                const respuesta = await fetch('/api/auth/registro', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(datosRegistro)
+                });
+                const resultado = await respuesta.json();
+                if (respuesta.ok && resultado.success) {
+                    alert(resultado.mensaje);
+                    window.location.href = "Isesion.html"; 
+                } else {
+                    alert(resultado.mensaje || 'Error en el registro');
+                }
+            } catch (err) {
+                alert('Error al conectar con el servidor.');
+            }
+        });
+    </script>
+</body>
+</html>

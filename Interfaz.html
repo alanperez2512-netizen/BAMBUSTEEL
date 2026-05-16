@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecosistema BambuSteel - Panel Central</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --verde-bambu: #2c5e3b;
+            --crema-fondo: blanchedalmond;
+            --verde-oscuro: #1e4228;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--crema-fondo);
+            background-image: radial-gradient(rgba(44, 94, 59, 0.15) 2px, transparent 2px);
+            background-size: 20px 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border: 4px solid var(--verde-bambu);
+            box-shadow: 15px 15px 0px var(--verde-bambu);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .hoja-decorativa {
+            width: 30px;
+            height: 30px;
+            background-color: var(--verde-bambu);
+            border-radius: 0 80% 0 80%;
+            transform: rotate(-15deg);
+        }
+
+        h1 {
+            color: var(--verde-bambu);
+            font-size: 2.8em;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 0px rgba(44, 94, 59, 0.1);
+        }
+
+        p.subtitle {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .grid-accesos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .grid-accesos {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card-acceso {
+            border: 2px solid #ccc;
+            padding: 25px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            background: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-acceso:hover {
+            border-color: var(--verde-bambu);
+            background: white;
+            transform: translate(-4px, -4px);
+            box-shadow: 6px 6px 0px rgba(44, 94, 59, 0.2);
+        }
+
+        .card-acceso h3 {
+            color: var(--verde-bambu);
+            font-size: 1.4em;
+            text-transform: uppercase;
+        }
+
+        .card-acceso p {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .footer-text {
+            margin-top: 35px;
+            font-size: 0.85em;
+            color: #888;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo-header">
+            <div class="hoja-decorativa"></div>
+            <h1>BambuSteel</h1>
+        </div>
+        <p class="subtitle">Infraestructura Web con Persistencia en MongoDB Atlas</p>
+
+        <div class="grid-accesos">
+            <a href="Regis.html" class="card-acceso">
+                <h3>Portal de Entrada</h3>
+                <p>Pantalla de bienvenida inicial para usuarios nuevos y existentes.</p>
+            </a>
+            <a href="Isesion.html" class="card-acceso">
+                <h3>Módulo de Autenticación</h3>
+                <p>Acceso al sistema con validación de credenciales en tiempo real.</p>
+            </a>
+            <a href="Iregistro.html" class="card-acceso">
+                <h3>Formulario de Registro</h3>
+                <p>Alta de nuevos clientes con almacenamiento directo en la base de datos.</p>
+            </a>
+            <a href="Productos.html" class="card-acceso">
+                <h3>Catálogo Dinámico</h3>
+                <p>Visualización de productos y mobiliario sustentable de bambú.</p>
+            </a>
+        </div>
+
+        <div class="footer-text">
+            Ingeniería en Tecnologías de la Información y la Comunicación • TESCI
+        </div>
+    </div>
+
+</body>
+</html>

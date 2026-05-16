@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - BambuSteel</title>
+    <style>
+        :root {
+            --verde-bambu: #2c5e3b;
+            --crema-fondo: blanchedalmond;
+            --verde-hover: #1e4228;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--crema-fondo);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("Bambu-2.gif") no-repeat center center/cover;
+        opacity: 0.7; /* Ajusta la opacidad aquí */
+        z-index: -1;
+    }
+        .navbar {
+            background-color: var(--verde-bambu);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .navbar-logo {
+            color: var(--crema-fondo);
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .nav-botones {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-nav {
+            background-color: transparent;
+            color: var(--crema-fondo);
+            border: 2px solid var(--crema-fondo);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-nav:hover {
+            background-color: var(--crema-fondo);
+            color: var(--verde-bambu);
+        }
+        .contenido-principal {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            border: 1px solid var(--verde-bambu);
+            box-shadow: 0 5px 15px rgba(44, 94, 59, 0.1);
+        }
+
+        h1 {
+            color: var(--verde-bambu);
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .argumentos-bambu {
+            line-height: 1.6;
+            font-size: 1.1em;
+            text-align: justify;
+        }
+
+        .argumentos-bambu ul {
+            padding-left: 20px;
+        }
+
+        .argumentos-bambu li {
+            margin-bottom: 10px;
+        }
+
+        .placeholder-productos {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: #e8f5e9;
+            border: 2px dashed var(--verde-bambu);
+            text-align: center;
+            font-family: monospace;
+            font-size: 1.2em;
+            color: var(--verde-bambu);
+            border-radius: 8px;
+        }
+        .Carts{
+           display: flex;
+           gap: 12px;
+        }
+        .card{
+           transition: 0.5s ease;
+           cursor: pointer;
+           position: relative;
+           flex: 1;
+           overflow: hidden;
+           border-radius: 10px;
+ }
+        .card img{
+         width:100%;
+         height:100%;
+         object-fit: cover;
+ }
+ .Carts:hover > :not(:hover){
+    opacity: 0.3;
+ }
+ .card:hover{
+    flex: 0.8;              /* ocupa menos espacio */
+    transform: scale(0.85); /* se hace más pequeña */
+ }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <h2 class="navbar-logo">BambuSteel</h2>
+        <div class="nav-botones">
+            <button class="btn-nav">Buscar</button>
+            <button class="btn-nav">Configuración</button>
+            <button class="btn-nav">Usuario</button>
+            <a href="Productos.html" class=" btn btn-nav">Productos</a>
+        </div>
+    </nav>
+
+    <main class="contenido-principal">
+        <h1>¿Por qué una silla de bambú supera a lo convencional?</h1>
+        
+        <div class="argumentos-bambu">
+            <p>Elegir <strong>BambuSteel</strong> no es solo una cuestión de estética, es una decisión inteligente de ingeniería y sostenibilidad. Las sillas convencionales de plástico o metal generan una alta huella de carbono y se degradan o deforman con el tiempo. El bambú cambia las reglas del juego:</p>
+            
+            <ul>
+                <li><strong>El "Acero Vegetal":</strong> El bambú tiene una resistencia a la tracción superior a la de muchas aleaciones de acero, garantizando sillas que soportan uso rudo continuo, ideales para escuelas o espacios públicos.</li>
+                <li><strong>Sostenibilidad real:</strong> Mientras que un árbol maderable tarda décadas en crecer, el bambú alcanza su madurez en solo 3 a 5 años, siendo un recurso hiper-renovable que además purifica grandes cantidades de CO2.</li>
+                <li><strong>Ligereza y ergonomía:</strong> A pesar de su fuerza, es un material extremadamente ligero, lo que facilita mover las sillas sin esfuerzo y evita dañar los pisos.</li>
+                <li><strong>Regulación térmica:</strong> A diferencia del metal que se calienta o enfría en extremo, o el plástico que hace sudar, el bambú mantiene una temperatura fresca y neutra, mejorando la comodidad del usuario durante largas jornadas.</li>
+            </ul>
+        </div>
+
+        <div class="placeholder-productos">
+            //aca añadire los productos
+        </div>
+    </main>
+
+    <div class="Carts">
+            <div class="card"><img src="Silla.jpg" alt=""></div>
+            <div class="card"><img src="Silla2.jpg" alt=""></div>
+            <div class="card"><img src="Silla3.jpg" alt=""></div>
+            <div class="card"><img src="Silla4.jpg" alt=""></div>
+            <div class="card"><img src="Silla5.jpg" alt=""></div>
+    </div>
+
+</div>
+
+</body>
+</html>
